@@ -6,10 +6,13 @@ let fs = require('fs');
 
 let http = require('http');
 const port = process.env.PORT || 3000;
-app.listen(3000, () => console.log('Server ready at 3000'))
-app.get('/', function(req, res) {
-    res.sendFile(path.join(__dirname + 'index.html'));
-})
+// app.listen(3000, () => console.log('Server ready at 3000'))
+app.use('/', express.static(__dirname + '/'));
+app.listen(port, () => console.log('Server ready at 3000'));
+
+// app.get('/', function(req, res) {
+//     res.sendFile(path.join(__dirname + 'index.html'));
+// })
 
 // fs.readFileSync('./index.html', function (err, html) {
 //     if (err) {
