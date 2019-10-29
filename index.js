@@ -6,24 +6,25 @@ let fs = require('fs');
 
 let http = require('http');
 const port = process.env.PORT || 3000;
+app.listen(3000, () => console.log('Server ready at 3000'))
+app.get('/', function(req, res) {
+    res.sendFile(path.join(__dirname + 'index.html'));
+})
 
-// app.get('/', function(req, res) {
-//     res.sendFile('C:\Users\andyr\ShareFile\Personal Folders\Term 4\COMP4711 - Web Dev\Labs\COMP4711NodeLab\index.html');
-// })
-fs.readFileSync('./index.html', function (err, html) {
-    if (err) {
-        throw err;
-    }
-    http.createServer(function(req, res) {
-        response.writeHeader(200, {"Content-Type": "text/html"});
-        response.write(html);
-        response.end();
-    }).listen(port)
-});
+// fs.readFileSync('./index.html', function (err, html) {
+//     if (err) {
+//         throw err;
+//     }
+//     http.createServer(function(req, res) {
+//         response.writeHeader(200, {"Content-Type": "text/html"});
+//         response.write(html);
+//         response.end();
+//     }).listen(port)
+// });
 
 // app.listen(3000, () => console.log('Server ready at 3000'))
 
-const artistDir = './artistlist.json'
+const artistDir = '/artistlist.json'
 
 app.use(express.static('COMP4711'));
 app.use(express.json({limit: '2mb'}));
