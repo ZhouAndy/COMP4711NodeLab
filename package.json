@@ -1,0 +1,20 @@
+{
+  "name": "comp4711nodelab",
+  "version": "1.0.0",
+  "main": "script.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "connect": "^3.7.0",
+    "express": "^4.17.1",
+    "file-server": "^2.1.0",
+    "file-system": "^2.2.2",
+    "serve-static": "^1.14.1"
+  },
+  "devDependencies": {},
+  "description": ""
+}
